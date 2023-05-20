@@ -1,0 +1,13 @@
+### Get without cursor
+GET http://localhost:8080/api/posts?size=4
+Accept: application/json
+
+
+### Get with next page cursor
+GET http://localhost:8080/api/posts?size=4&nextPageCursor=IyMjTWFzdGVyaW5nIFBob3RvZ3JhcGh5OiBGcm9tIEJlZ2lubmVyIHRvIFBybyMjIyAtIDIwMjMtMDUtMjBUMjI6MjM6MjYuNDk1OTU2NDAw
+Accept: application/json
+
+
+### Get with previous page cursor
+GET http://localhost:8080/api/posts?size=4&previousPageCursor=IyMjVGhlIEFydCBvZiBDdWxpbmFyeSBEZWxpZ2h0cyMjIyAtIDIwMjMtMDUtMjBUMjI6MjM6NDYuODk5MjM0NzAw
+Accept: application/json
