@@ -13,7 +13,7 @@ This approach allows for efficient retrieval of large data sets without the need
 specific number of records.
 
 ### Technologies Used
-- Java 17
+- Java 20
 - Spring Boot
 - Spring Data JPA
 - H2 Database
