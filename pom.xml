@@ -14,7 +14,7 @@
 	<name>spring-cursor-based-pagination</name>
 	<description>spring-cursor-based-pagination</description>
 	<properties>
-		<java.version>20</java.version>
+		<java.version>17</java.version>
 		<commons-lang3.version>3.12.0</commons-lang3.version>
 	</properties>
 	<dependencies>
@@ -70,5 +70,41 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>native</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+						<artifactId>native-maven-plugin</artifactId>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>build-native</id>
+								<goals>
+									<goal>compile-no-fork</goal>
+								</goals>
+								<phase>package</phase>
+							</execution>
+							<execution>
+								<id>test-native</id>
+								<goals>
+									<goal>test</goal>
+								</goals>
+								<phase>test</phase>
+							</execution>
+						</executions>
+						<configuration>
+							<imageName>hm-app</imageName>
+							<mainClass>com.hedza06.cursorbasedpagination.SpringCursorBasedPaginationApplication</mainClass>
+							<verbose>true</verbose>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>
